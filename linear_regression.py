@@ -4,10 +4,10 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import fileinput
-from estimate import estimatePrice
+from estimation import estimatePrice
 import config
 
-class Trainer:
+class LinearRegression:
 
     CONFIG_FILE = "config.py"
 
@@ -19,8 +19,8 @@ class Trainer:
         self.prices = np.array(df["price"]) / 1000
 
     def train(self):
-        theta0 = config.theta0
-        theta1 = config.theta1
+        theta0 = 0
+        theta1 = 0
         kms = self.kms
         prices = self.prices
         m = kms.size
@@ -101,11 +101,11 @@ class Trainer:
 
 def main():
     try:
-        t = Trainer()
-        t.train()
-        t.save()
+        ln = LinearRegression()
+        ln.train()
+        ln.save()
         if config.display_estimated_vs_datas:
-            t.displayEstimatedVsData()
+            ln.displayEstimatedVsData()
     except Exception as e:
         print(e)
 

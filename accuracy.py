@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import fileinput
-from estimate import estimatePrice
+from estimation import estimatePrice
 import config
 
 class Checker:
