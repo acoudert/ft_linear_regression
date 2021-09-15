@@ -1,9 +1,7 @@
-from sys import exit, stderr
 import csv
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import fileinput
 from estimation import estimatePrice
 import config
 

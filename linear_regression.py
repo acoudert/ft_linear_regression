@@ -40,6 +40,9 @@ class LinearRegression:
             tmp_theta1 = learning_rate * sum(temp * kms) / m
             theta0 -= tmp_theta0
             theta1 -= tmp_theta1
+            if display_iteration_info:
+                i += 1
+                print(i, theta0, theta1, tmp_theta0, tmp_theta1)
             if display_thetas_variations:
                 tmp_thetas0.append(tmp_theta0)
                 tmp_thetas1.append(tmp_theta1)
@@ -49,9 +52,6 @@ class LinearRegression:
                 if display_thetas_variations:
                     self.displayThetasVariations(tmp_thetas0, tmp_thetas1)
                 return
-            if display_iteration_info:
-                i += 1
-                print(i, theta0, theta1, tmp_theta0, tmp_theta1)
             if abs(theta0) > divergence_limit or abs(theta1) > divergence_limit:
                 print("Function is divergent - ABORT", file=stderr)
                 exit(1)

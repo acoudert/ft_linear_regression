@@ -6,11 +6,9 @@ def estimatePrice(km, theta0=config.theta0, theta1=config.theta1):
 def main():
     while True:
         try:
-            res = estimatePrice(int(input("Car km ? ")))
-            print(res)
+            print(estimatePrice(int(input("Car km ? "))))
         except Exception as e:
             print(e)
-
 
 if __name__ == "__main__":
     main()
