@@ -1,4 +1,9 @@
 theta0 = 0
 theta1 = 0
-learning_rate = 0.5
-data_amount = 0
+csv_file = "data.csv"
+learning_rate = 0.0001
+delta_stop_regression = 0.000001
+divergence_limit = 1000000000
+display_iteration_info = True
+display_thetas_variations = True
+display_estimated_vs_datas = True
